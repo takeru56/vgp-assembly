@@ -68,23 +68,23 @@ RUN wget https://github.com/lh3/minimap2/archive/v2.11.tar.gz && \
     echo "append-path PATH /root/bin/minimap2_2.11" >>/root/modules/minimap2/2.11
 
 ### samtools
-# 1.9
+# 1.11
 WORKDIR /opt/samtools
-RUN wget https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2 && \
-    tar xvf samtools-1.9.tar.bz2 && \
-    rm -r /opt/samtools/samtools-1.9.tar.bz2 && \
-    cd samtools-1.9/ && \
+RUN wget https://github.com/samtools/samtools/releases/download/1.11/samtools-1.11.tar.bz2 && \
+    tar xvf samtools-1.11.tar.bz2 && \
+    rm -r /opt/samtools/samtools-1.11.tar.bz2 && \
+    cd samtools-1.11/ && \
     autoheader && \
     autoconf -Wno-header && \
     ./configure --without-curses && \
     make && \
-    mkdir /root/bin/samtools_1.9 && \
-    cp samtools /root/bin/samtools_1.9 && \
+    mkdir /root/bin/samtools_1.11 && \
+    cp samtools /root/bin/samtools_1.11 && \
     mkdir /root/modules/samtools && \
-    echo "#%Module" >>/root/modules/samtools/1.9 && \
-    echo "append-path PATH /root/bin/samtools_1.9" >>/root/modules/samtools/1.9 && \
+    echo "#%Module" >>/root/modules/samtools/1.11 && \
+    echo "append-path PATH /root/bin/samtools_1.11" >>/root/modules/samtools/1.11 && \
     echo "#%Module" >>/root/modules/samtools/.modulerc && \
-    echo "module-version /1.9 default" >>/root/modules/samtools/.modulerc 
+    echo "module-version /1.11 default" >>/root/modules/samtools/.modulerc
 
 # 1.4.1
 WORKDIR /opt/samtools
@@ -102,39 +102,39 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.4.1/samtools-1
     echo "append-path PATH /root/bin/samtools_1.4.1" >>/root/modules/samtools/1.4.1
 
 ### bedtools
-## 1.9
+## 2.30.0
 WORKDIR /opt/bedtools
-RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.28.0/bedtools-2.28.0.tar.gz && \
-    tar -zxvf bedtools-2.28.0.tar.gz && \
-    rm -r /opt/bedtools/bedtools-2.28.0.tar.gz && \
+RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.30.0/bedtools-2.30.0.tar.gz && \
+    tar -zxvf bedtools-2.30.0.tar.gz && \
+    rm -r /opt/bedtools/bedtools-2.30.0.tar.gz && \
     cd bedtools2 && \
     make && \
-    mkdir /root/bin/bedtools_2.28.0 && \
-    mv /opt/bedtools/bedtools2/bin/* /root/bin/bedtools_2.28.0 && \
+    mkdir /root/bin/bedtools_2.30.0 && \
+    mv /opt/bedtools/bedtools2/bin/* /root/bin/bedtools_2.30.0 && \
     mkdir /root/modules/bedtools && \
-    echo "#%Module" >>/root/modules/bedtools/2.28.0 && \
-    echo "append-path PATH /root/bin/bedtools_2.28.0" >>/root/modules/bedtools/2.28.0 && \
+    echo "#%Module" >>/root/modules/bedtools/2.30.0 && \
+    echo "append-path PATH /root/bin/bedtools_2.30.0" >>/root/modules/bedtools/2.30.0 && \
     echo "#%Module" >>/root/modules/bedtools/.modulerc && \
-    echo "module-version /2.28.0 default" >>/root/modules/bedtools/.modulerc
+    echo "module-version /2.30.0 default" >>/root/modules/bedtools/.modulerc
 
 ### bcftools
-## 1.9
+## 1.11
 WORKDIR /opt/bcftools
-RUN wget https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9.tar.bz2 && \
-    tar xvf bcftools-1.9.tar.bz2 && \
-    rm -r /opt/bcftools/bcftools-1.9.tar.bz2 && \
-    cd bcftools-1.9/ && \
+RUN wget https://github.com/samtools/bcftools/releases/download/1.11/bcftools-1.11.tar.bz2 && \
+    tar xvf bcftools-1.11.tar.bz2 && \
+    rm -r /opt/bcftools/bcftools-1.11.tar.bz2 && \
+    cd bcftools-1.11/ && \
     autoheader && \
     autoconf -Wno-header && \
     ./configure --without-curses && \
     make && \
-    mkdir /root/bin/bcftools_1.9 && \
-    cp bcftools /root/bin/bcftools_1.9 && \
+    mkdir /root/bin/bcftools_1.11 && \
+    cp bcftools /root/bin/bcftools_1.11 && \
     mkdir /root/modules/bcftools && \
-    echo "#%Module" >>/root/modules/bcftools/1.9 && \
-    echo "append-path PATH /root/bin/bcftools_1.9" >>/root/modules/bcftools/1.9 && \
+    echo "#%Module" >>/root/modules/bcftools/1.11 && \
+    echo "append-path PATH /root/bin/bcftools_1.11" >>/root/modules/bcftools/1.11 && \
     echo "#%Module" >>/root/modules/bcftools/.modulerc && \
-    echo "module-version /1.9 default" >>/root/modules/bcftools/.modulerc
+    echo "module-version /1.11 default" >>/root/modules/bcftools/.modulerc
 
 ### bamtools
 ## 2.5.1
